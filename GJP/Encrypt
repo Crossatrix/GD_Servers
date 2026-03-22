@@ -1,0 +1,9 @@
+import base64
+import hashlib  # sha1() lives there
+
+
+def generate_gjp2(password: str = "", salt: str = "mI29fmAnxgTs") -> str:
+	password += salt
+	hash = hashlib.sha1(password.encode()).hexdigest()
+
+	return hash
